@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+</head>
+<body>
+    <h1><center>JAVASCRIPT ÖĞRENİYORUM!</center></h1>
+    
+    <script>
+                /*  DEĞİŞKENLER
+                DEĞİŞKEN TANIMLAMA KURALLARI:
+                1.DEĞİŞKENLER SAYI İLE BAŞLAYAMAZ
+                2. KEYWORDLER İLE DEĞİŞKEN TANIMLAMA YAPILMAZ
+                3. 1 DEĞİŞKENDE BİRDEN FAZLA KELİME VARSA BOŞLUK KULLANILMAZ*/
+               //ÖRNEKLER:
+                let ad = "Steve";//let ile var aynı görevi görürler. değişken oluşturmak için kullanılırlar.
+                var soyad = "Jobs";
+                console.log(ad+soyad)//+ işareti sözel toplamayı ifade eder 
+
+                var ad_soyad ="Steve Jobs";//Birden fazla kelime kullanıcaksak "_" olmalıdır yada birleşik yazılabilir.
+                console.log(ad_soyad)//değişken yazdırırken tırnak işareti kullanılmaz
+
+                //case sensitive (buyuk - kucuk harf duyarlılığı)
+                var first_name = "steve jobs" , first_Name = "bill gates"; //bunlar birbirlerinden farklı değişkenlerdir çünkü JS büyük-küçük harfe duyarlı bir dildir.
+                console.log(first_name);
+                console.log(first_Name);
+
+                //JS'de var olan bir değeri başka değer ile değiştirmek.
+                var sehir = "California";
+                sehir = "New York";//artık sehir değişkeninin değeri New York oldu. bundan önce bu değere başka bir değer atandıysa o değeğri görmez.
+               
+                //const (sabit)
+                const city = "California" //bu değişkeni başka bir satırda içindeki değeri değiştiricek olursal hata verir çünkü sabitlerin içindeki değerler bir daha değiştirilemez
+
+                        //DEĞİŞKEN TÜRLERİ
+                                //PRIMITIVE TYPES
+                                        //NUMBER
+                                        let age = 16;
+                                        let money = 100.5;
+                                        console.log(typeof age);//age değişkeninşn tipi number(sayıdır)
+
+                                        //STRING
+                                        let name = "steve"
+                                        console.log(typeof name);//name değişkeninin tipi String
+                                        
+                                        //BOOLEAN
+                                        let isActive = true;
+                                        console.log(typeof isActive);
+                                        //NULL
+                                        let job = null;//null'un anlamı değişkene herhangi bir değerinin atanmadığını , yani bir boşluğu gösterir.
+                                        console.log(typeof job);
+
+                                        //undefined
+                                        let way;
+                                        console.log(typeof way);//tanımlanmamış bir değer.
+
+                                //REFERANCE TYPES
+
+                                //ARRAY
+                                    let names = ["Erdeniz","Steve","Bill"]; //ARRAY(DİZİ) bir değişkene birden fazla değer atamak için kullanıır
+
+                                //FUNCTION
+                                var calculateAge = function(){
+                                    return 0;
+                                }; //sıfır değeri verir.
+
+                                //OBJECT
+                                let address = {
+                                    planet : "earth" ,
+                                    county : "america" 
+                                }
+
+
+                                        //TÜR DÖNÜŞÜMLERİ
+                                            //NUMBER TO STRING
+                                                var ns = String(10)//1. yol
+
+                                                    console.log(ns);
+                                                    console.log(typeof ns);
+                                                    console.log(ns.length)//karakter uzunluğu
+
+                                                var ls = 54; //2. yol
+                                                ls = String();
+                                                console.log(ls);
+                                                    console.log(typeof ls);
+                                                    console.log(ls.length)//karakter uzunluğu
+
+                                                var so = (10).toString();//3.yol
+                                                console.log(so);
+                                                    console.log(typeof so);
+                                                    console.log(so.length)//karakter uzunluğu
+                                            //STRING TO NUMBER
+                                                var sn= Number("10");
+                                                var sn= parseInt("10");//int e dönüştürür   
+                                                var sn= parseFloat("10");//float a dönüştürür(sadece ondalık sayılarda kullanılır.)
+                                                    console.log(sn);
+                                                    console.log(typeof sn);
+                                                    console.log(sn.length);
+
+                                            //BOOL TO STRING
+                                                var bs = true;
+                                                bs = String();
+                                                console.log("değerin tipi ="+typeof bs);
+                                            
+                                           
+                                            var sx = false.toString();
+
+                                            //NOT:sayı içermeyen harflerden oluşan bir değeri sayıya dönüştürürsek NaN (not a number) hatasını alırız.
+//*************************************************************************************************************************************************//              
+              //        DEĞİŞKEN ÖRNEKLERİ:
+
+              //Bir müşteri için aşağıdaki bilgiler için değişken oluşturunuz:(değerleri kendiniz belirleyiniz)
+                                //MÜŞTERİ ADI
+                                //MÜŞTERİ SOYADI
+                                //MÜŞTERİ SİPARİŞ TOPLAMI
+                                //MÜŞTERİ CİNSİYETİ
+                                //MÜŞTERİ AKTİF BİLGİSİ
+                                //MÜŞTERİ ADRES BİLGİSİ
+                                //MÜŞTERİ HOBİLERİ
+              
+              var customer_name="Jeff";
+              var customer_surname="Bezos";
+              var ordering_total=150;
+              var customer_gender="male";
+              var customer_isActive=false;
+              var customer_address = {
+                  c_country : "america" ,
+                    c_province : "california"
+              }
+              var hobbies = ["Cinema","Music","Programming"];
+              
+              
+
+              // ŞİPARİŞİN TOPLAMINI YAZINIZ: örneğin order1 = 100 tl , order2 = 250tl
+
+              var order1 =Number("750");
+              var order2 = Number("152");
+              var total = (order1 + order2);//Number'e dönüştürmezsek console'a yazdırdığımızda string olarak algırlar.
+              console.log(total);
+                    
+              //ondalıklı bir işlemi tam sayı olarak toplamak:
+
+              var P1 = 100.5;
+              var P2 = 780.778;
+              var Total = parseInt(P1+P2);
+              console.log(Total);
+              console.log("tipi "+typeof Total); 
+              
+              //doğum tarihi 1884 olan birinin yaşını hesaplayınız.
+                var yearofBirth=1884;
+                console.log(new Date().getFullYear()-yearofBirth);
+
+            //string bir değişken oluşturun ve karakter uzunluğunu bulunuz.
+
+            var leangue="javascript";
+            console.log(leangue.length);
+
+//*****************************************************************************************************************************//
+
+                //OPERATÖRLER
+                var number = 5;
+                const a = 10;
+                const b = 5;
+                        //ARİTMATİK OPERATÖRLER
+                            collection = a+b;//a ve b değerini toplayıp '='işareti ile soldaki değere atar.
+                            extraction = a-b;
+                            division = a/b;
+                            multiplication =a*b;
+                            mod = a%b;
+                            number++;//number değişkenini 1 arttırır.
+                            console.log(number);
+
+                            var no = 5; //arttırma işlemi böyle de yazılabilir.
+                            ++no; 
+                            console.log(no);
+
+                                var extr_number = 5;
+                            extr_number--;//number değişkenini 1 eksilt.
+                            console.log(extr_number);
+
+                            var extr_no = 5; //eksiltme işlemi böyle de yazılabilir.
+                            ++extr_no; 
+                            console.log(no);
+
+                        //ATAMA OPERATÖRLERİ
+                        var n1 = 10 , n2 = 20;
+                        n1 +=a; // n1 ile a değişkenini topla ve n1 değilkenine ata. bu kod n1 = n1 + a; olarak da yazılabilir.
+                        n2 -=n1; // n2 ile n1 değişkenini çıkar ve n2 değişkenine ata. bu kod   n2 = n2 - n1; olarak da yazılabilir.
+                        n1 /=a; // n1 ile a değişkenini böl ve n1 değilkenine ata.
+                        n1 *=a; //n1 ile a değişkenini çarp ve n1 değilkenine ata.
+                        n1 %=a; //n1 ile a değişkeninin modunu al n1 değilkenine ata.
+
+                        //KARŞILAŞTIRMA OPERATÖRLERİ
+                        var val;
+                        var a2 = 10 , b2 = 6 , c = 8;
+                        val = a2==b2; //a2 ile b2 eşitliğini karşılaştırır.
+                        val = a2==c; //a2 ile c eşitliğini karşılaştırır.
+                        val = 5 === "5"; // === tip ve değer eşitiğini kontrol eder.
+                        val = a2!=b2; // ! işareti sayının tersini ifade eder burda ise eşit değil mi onu kontrol eder.
+                        val = a2>b2; //a2 , b2'den büyük mü diye kontrol eder.
+                        val = a2<b2; //a2 , b2'den küçük mü diye kontrol eder.
+
+                        //MANTIKSAL OPERATÖRLER
+
+                                    // && (and)
+                                         // true && true => true
+                                         // true && false => false
+                                         // false && false => false
+                                    
+                                    val = (a>b) && (a>c) //true // a b den büyük mü ve a c den büyük mü?
+                                    val = (a>b) || (a<c);//true //a b den büyük mü yada a c den küçük mü?
+                                    val = !(a>b) //false (true olarak gelen değeri tam tersi yapar.)
+                                    // || (or)
+                                         // true && true => true
+                                         // true && false => true
+                                         // false && false => false
+
+                                    // ! (not)
+                                        //!true => false
+                                        //!false => true 
+                                    
+
+                        console.log("toplam="+collection);
+                        console.log("collection değişkeninin tipi="+typeof collection)//değikenin tipini yazdırmak için typeof kullanılır.
+
+    
+             //DATE OBJECT
+
+             var d = new Date(); //tam tarih.
+
+            //set methods
+            d.setFullYear(2020);//normalde 2019 olan yılı set methodu ile 2020 yaptım.
+            d.setMonth(6);
+            d.setMinutes(45);
+
+             //get methods
+                    console.log(d.getDay());//gün
+                    console.log(d.getFullYear());//tam yıl
+                    console.log(d.getHours());//saat
+                    console.log(d.getMilliseconds());//milisaniye
+                    console.log(d.getMinutes());//dakika
+                    console.log(d.getMonth());//ay
+                    console.log(d.getSeconds());//saniye
+            console.log(d);
+            console.log(typeof d);
+
+
+//***********************************************************************************************************************//
+            //DATE ÖRNEKKLER:
+
+            //şimdiki tarihin gün , ay ve yıl bilgilerini yazdırınız.
+
+            var d1 = new Date();
+            console.log(d1.getDay()+1);
+            console.log(d1.getMonth());
+            console.log(d1.getFullYear());
+
+            //tarih ve saat bilgisani içeren Date objesi oluşturunuz.
+
+            var dsf = new Date("10/05/2020 15:46:21");//1.yol
+            var sdf = new Date(2020,12,21,14,45.12);//2.yol
+            console.log(dsf);
+            console.log(sdf);
+
+            // 1/1/1999 tarihinden 1 gün öneki tarihi gösteriniz.
+
+            var sp1 = new Date();
+            var dayOFMonth = sp1.getDate();
+            sp1.setDate(dayOFMonth-1);
+              console.log(sp1);
+
+            //2 tarih arasında geçen zamanı bulunuz:
+
+            var start = new Date(01/01/1990);
+            var end = new Date(01/05/1995);
+
+            var miliseconds = end - start;
+            var second = miliseconds / 1000;
+            var minute = second / 60;
+            var hour = minute / 60;
+            var day = hour / 24;
+
+              console.log("milisaniye: "+miliseconds);
+              console.log("sayiye: "+second);
+              console.log("dakika: "+minute);
+              console.log("saat: "+hour);
+              console.log("gün: "+day);
+
+           //yaş hesaplama
+
+           let bday = new Date(06/05/1985);
+           console.log(bday.getTime());
+           console.log(Date.now());
+
+                //number methodları:
+
+                //isNan : sayıya dönüştürmeden önce dönüştüreceğimiz değerin sayı olup olmadığını kontrol eder
+                var oR = isNaN("a10");
+                console.log(oR);//console'da true çıktısı çıkar yani bu bir Not a Number'dır.
+                console.log(typeof oR);
+
+                //Precision , Fixed
+                var npOo = 10.123456789;
+                npOO = npOo.toFixed(4);//virgülden sonra 4 basamaklı bir sayı gösterir.
+                console.log(npOO);
+                var noqp = 18.789456;
+                nopQ = noqp.toPrecision(4);//baştan itibaren 4 haneli bir sayi gösterir.
+                console.log(nopQ);
+
+                //PI
+                var yoyo = Math.PI; 
+                console.log(yoyo);//pi'yi yazdırmış olduk.
+
+                //round
+                var oyuo = Math.round(4.2); //en yakın sayıya yuvarlar.
+                console.log(oyuo);
+                var olhd = Math.round(6.9);
+                console.log(olhd);
+
+                //ceil
+                var qolc = Math.ceil(2.1); //herzaman yukarıya yuvarlar;
+                console.log(qolc);
+                var zaq = Math.ceil(2.6);
+                console.log(zaq);
+
+                //floor
+                var qclq = Math.floor(2.1);//herzaman aşağıya yuvarlar.
+                console.log(qclq);
+                var pgjd = Math.floor(2.9);
+                console.log(pgjd);
+
+                //sqrt ; karekök almak
+                var karekok = Math.sqrt(45)//45'in karekökünü aldık
+                console.log(karekok);
+
+                //üs almak
+                var us = Math.pow(2,5); //2 üssü 5 i aldık. sayının arasına nokta yerine virgün konulur
+                console.log(us);
+
+                //herzaman negatifini almak.
+                var neg = Math.abs(-100);
+                console.log(neg);//artık pozitif oldu.
+
+                //en büyük ve en küçük sayıyı bulmak.
+                var min = Math.min(1,2,5,8,9,6,4);//en küçük sayıyı seçecek.
+                console.log(min);
+                var max = Math.max(2,5,8,64,8,465);//en büyük sayıyı seçecek.
+                console.log(max);
+
+                //random.
+                var random = Math.random()*10;//random sayı üretir,ondalıklı sayıdır.
+                console.log(random);
+                var randm = Math.floor(Math.random()*10);//random sayı üretir ama floor ile virgülleri görmez aşağıya doğru yuvarlar.
+                console.log(randm);
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+               
+                //number method örnekleri
+                var numhgjkf = 2.456784157;
+
+                //yukarıdaki sayıyı kullanarak 3 basamaklı sayı yazdır.
+                numhgjdkf = numhgjkf.toPrecision(3);
+                console.log(numhgjdkf);
+                //yukarıdaki sayıyı kullanarak ondalık kısmı 3 basamaklı sayı yazdır.
+                numhgjkfd = numhgjkf.toFixed(3);
+                console.log(numhgjkfd);
+                //en yakın sayıya yuvarla.
+                numhgjkfqq = Math.round(numhgjkf);
+                console.log(numhgjkfqq)
+                //aşağı yuvarla
+                numhgjkfqp = Math.floor(numhgjkf);
+                console.log("aşağıya yuvarlayınca="+numhgjkfqp); 
+                //yukarı yuvarla
+                console.log(Math.ceil(numhgjkf)) 
+                //12,40,48,65,8 sayılarından en küçüğünü ve en büyüğünü bul.
+                var mixmin = Math.min(12,40,48,65,8);
+                console.log(mixmin);
+                var mixma = Math.max(12,40,48,65,8);
+                console.log(mixma);
+                //sayı aralığının kullanıcı belirleceği rastgele bir sayı üret.
+                var mamax = 100;
+                var mimin = 50;
+                //50 ile 100 arasında rastgele sayı üretecek.
+                console.log(Math.floor(mimin+Math.random()*(mamax-mimin)));
+
+                /* bir personelin yaptığı mesaiye göre aldığı aldığı maaşı hesaplayalım
+                    brüt maaş = 3700 TL
+                    brüt mesai = 10.3 TL
+                    -ağustos ayı mesai toplamı 42 saat ise toplam brüt maaş kaçtır?
+                    -brüt maaş üzerinden toplam kesinti oranı %25 ise alınacak toplam net maaş kaçtır?
+                */
+                 var brutMaas = 3700;
+                 var brutMesai = 10.3;
+                 var saat = 42;
+
+                 topBrutMaas = brutMaas + (brutMesai*saat);
+                 console.log("toplam brut maas ="+topBrutMaas);
+
+                 var toplamNetMaas = topBrutMaas - topBrutMaas*0.25;
+                 console.log("toplam net maas = "+toplamNetMaas.toFixed(0));//virgülden sonra 0 basamak olsun. aynı işlem baska methodlar ile de yapılabilinir.
+
+                //String Methods
+                const firstnName = "Steve";
+                const lastnName = "Wozniak";
+                let value;
+                let hob = "yazılım,film,dizi,kitap";                // string concatenation
+
+                value = firstnName +" "+ lastnName;
+                value = "Steve";
+                value += " Wozniak"; //value değerinin içinde artık Steve Wozniak değeri var.
+
+
+                var value1 = "Benim adım "+firstnName+" "+ lastnName+ " ve yaşım "+ age + " california'da yaşıyorum";
+
+                //string concat
+                value = firstnName.concat(" ",lastnName);//2 değeri birleştirdik.
+
+                //string uppercase - lovercase
+                value =value.toUpperCase();//value'nin içindeki string değeri büyük harflerler yazar
+                value =value.toLowerCase();//value'nin içindeki string değeri küçük harflerler yazar
+                
+                value = hob.split(",");//değeri ","den ayırdık. 
+
+
+                //string replace
+                value1 =value1.replace("Steve","Ahmet");//steve değerini ahmet değeri ile değiştirdik.
+                console.log(value1)
+
+                //substring
+                // val = val.substring(3,8);
+
+               //slice
+               //val = val.slice(0,5) //0'dan 5. karaktere kadar gösterir.
+
+                //value = value.indexOf("t"); //value değişkeninin içinde Steve yazıyorsa indexOf ile t yi aratırsak bize 3 ü gösterir. 0 dan başladığı için.
+               
+                var value12="Freezing Moon"
+                value12 = value12[1];//value12 değerinde ne varsa 1. değeri gösterir
+                console.log(value12)
+
+                //string length
+                value = value.length;
+
+
+                //Template Literals
+                const fullNaame = "Salvador Dali";
+                const ciiity = "Mars";
+                const  yearof_birth = 1999;
+                
+                let o0o;
+
+                o0o ='my name is '+fullNaame+' I\'m '+(2019-yearof_birth)+' years old '+' n I live in '+ciiity;
+                console.log(o0o);
+
+                //ternary operator
+                var oooo =`my name is ${fullNaame} I'm ${2019-yearof_birth} years old and I live in ${ciiity}`
+                
+    </script>
+</body>
+</html>
